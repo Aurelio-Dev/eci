@@ -1,0 +1,192 @@
+
+      /* Estilos forçados para o Menu Cascata */
+      .menu-cascata {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 15px;
+        width: 250px;
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
+        overflow: hidden;
+      }
+      .menu-cascata.ativo {
+        display: block;
+      }
+      .menu-cascata a {
+        display: block;
+        padding: 12px 20px;
+        font-size: 14px;
+        color: #1f2937;
+        text-decoration: none;
+        font-weight: 600;
+        border-bottom: 1px solid #f3f4f6;
+        transition: background-color 0.2s;
+        text-transform: none;
+        letter-spacing: normal;
+      }
+      .menu-cascata a:last-child {
+        border-bottom: none;
+      }
+      .menu-cascata a:hover {
+        background-color: #f3f4f6;
+        color: #1e3a8a;
+      }
+      
+      /* Estilos do Conteúdo de Privacidade */
+      .privacy-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 8rem 2rem 5rem 2rem;
+        font-family: 'Inter', sans-serif;
+        color: #374151;
+        line-height: 1.7;
+      }
+      .privacy-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+      .privacy-header h1 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 4rem;
+        color: #0b1c3f;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+      .privacy-header p {
+        color: #6b7280;
+        font-size: 0.875rem;
+      }
+      .privacy-section {
+        margin-bottom: 3rem;
+      }
+      .privacy-section h2 {
+        color: #0b1c3f;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.25rem;
+        border-left: 4px solid #ffcc00;
+        padding-left: 1rem;
+      }
+      .privacy-section p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+      .privacy-section ul {
+        list-style-type: disc;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+      }
+      .privacy-section li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* ================================================== */
+      /* WIDGET DE ACESSIBILIDADE (Cores e Fontes)          */
+      /* ================================================== */
+      .accessibility-panel {
+        position: fixed;
+        right: 10px; 
+        top: 45%; 
+        transform: translateY(-50%);
+        z-index: 9998;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+      .accessibility-trigger {
+        background-color: #0b1c3f;
+        color: #fff;
+        border: none;
+        border-radius: 8px; /* Mantém o padrão quadradinho */
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+      }
+      .accessibility-trigger:hover {
+        background-color: #ffcc00;
+        color: #0b1c3f;
+      }
+      .accessibility-content {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        background: white;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        border: 1px solid #e5e7eb;
+      }
+      .accessibility-content.active {
+        display: flex;
+      }
+      .accessibility-content button {
+        background: #f3f4f6;
+        border: 1px solid #e5e7eb;
+        padding: 8px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        color: #1f2937;
+        transition: all 0.2s;
+        white-space: nowrap;
+      }
+      .accessibility-content button:hover {
+        background: #e5e7eb;
+      }
+
+      /* Estilos Visuais Acessibilidade */
+      body.alto-contraste, 
+      body.alto-contraste main, 
+      body.alto-contraste section, 
+      body.alto-contraste div.bg-white,
+      body.alto-contraste div.bg-gray-50,
+      body.alto-contraste div.bg-gray-100 {
+        background-color: #000 !important;
+        color: #fff !important;
+        border-color: #fff !important;
+      }
+      body.alto-contraste h1, 
+      body.alto-contraste h2, 
+      body.alto-contraste h3, 
+      body.alto-contraste h4, 
+      body.alto-contraste p,
+      body.alto-contraste span,
+      body.alto-contraste li {
+        color: #fff !important;
+      }
+      body.cursor-grande {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M4 0l11 32 5-13 12-4z" fill="white" stroke="black" stroke-width="2"/></svg>'), auto !important;
+      }
+    
+
+      .novo-footer { background-color: #0b1c3f; color: #ffffff; padding: 4rem 0; border-top: 1px solid rgba(255, 255, 255, 0.1); font-family: 'Inter', sans-serif; }
+      .novo-footer-container { max-width: 80rem; margin: 0 auto; padding: 0 1.5rem; }
+      .novo-footer-top { display: flex; flex-wrap: wrap; gap: 3rem; margin-bottom: 3rem; }
+      .novo-footer-col-1 { flex: 2; min-width: 280px; }
+      .novo-footer-col-2, .novo-footer-col-3 { flex: 1; min-width: 200px; }
+      .novo-footer-logo { height: 100px; width: auto; margin-bottom: 1.5rem; }
+      .novo-footer-link { color: #d1d5db; text-decoration: none; transition: color 0.3s; display: block; margin-bottom: 1rem; font-size: 0.875rem; }
+      .novo-footer-link:hover { color: #ffcc00; }
+      .novo-footer-bottom { display: flex; flex-wrap: wrap; gap: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 3rem; margin-bottom: 2rem; }
+      .novo-footer-apoio { flex: 1; min-width: 280px; }
+      .novo-footer-patroc { flex: 1.5; min-width: 300px; }
+      .novo-footer-title { color: #ffcc00; font-size: 1.25rem; margin-bottom: 1.5rem; font-weight: 500; }
+      .novo-footer-img-group { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; }
+      .img-apoio { height: 70px; width: auto; object-fit: contain; }
+      .img-patroc { height: 50px; width: auto; object-fit: contain; }
+      .img-placeholder { border: 1px dashed rgba(255, 255, 255, 0.3); border-radius: 4px; padding: 4px; }
+      .novo-footer-copy { display: flex; justify-content: space-between; flex-wrap: wrap; font-size: 0.75rem; color: #9ca3af; gap: 1rem; }
+    

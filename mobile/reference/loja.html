@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja Oficial - Esporte Clube Itapetininga</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <style>
+    /* ===== LOJA OFICIAL — todas as classes usam o prefixo "loja-" ===== */
+    body {
+      margin: 0;
+      background: #f4f6fa;
+      color: #1b2438;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
+    .loja-page {
+      --loja-navy: #001241;
+      --loja-blue: #082567;
+      --loja-royal: #0b3aa4;
+      --loja-gold: #fccc00;
+      --loja-ink: #1b2438;
+      --loja-muted: #4a5468;
+      --loja-line: #dce1ec;
+      --loja-paper: #ffffff;
+      display: block;
+    }
+
+    .loja-wrap {
+      width: 100%;
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+    }
+
+    .loja-kicker {
+      margin: 0 0 0.9rem;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--loja-royal);
+    }
+
+    /* ---------- HERO ---------- */
+    .loja-hero {
+      color: #fff;
+      background: linear-gradient(120deg, #001241 0%, #082567 70%, #0a2f86 100%);
+      padding: 2rem 0 4.25rem;
+    }
+
+    .loja-breadcrumb {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.75rem;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .loja-breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(252, 204, 0, 0.6);
+      padding-bottom: 1px;
+    }
+    .loja-breadcrumb a:hover,
+    .loja-breadcrumb a:focus-visible {
+      color: var(--loja-gold);
+      border-bottom-color: var(--loja-gold);
+    }
+    .loja-breadcrumb a:focus-visible {
+      outline: 3px solid var(--loja-gold);
+      outline-offset: 4px;
+    }
+    .loja-breadcrumb .material-symbols-outlined {
+      font-size: 1.05rem;
+    }
+
+    .loja-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: end;
+    }
+    .loja-hero .loja-kicker {
+      margin-bottom: 0.35rem;
+      font-size: 0.85rem;
+      color: var(--loja-gold);
+    }
+
+    .loja-title {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 3.6rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .loja-title strong {
+      font-weight: inherit;
+      color: var(--loja-gold);
+    }
+
+    .loja-lead {
+      max-width: 40rem;
+      margin: 1.1rem 0 0;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .loja-status {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
+      gap: 0.65rem;
+      margin: 0;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid rgba(252, 204, 0, 0.5);
+      background: rgba(0, 18, 65, 0.4);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .loja-status-dot {
+      flex: none;
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background: var(--loja-gold);
+      animation: loja-pulse 2s ease-out infinite;
+    }
+    @keyframes loja-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(252, 204, 0, 0.55); }
+      80%, 100% { box-shadow: 0 0 0 0.5rem rgba(252, 204, 0, 0); }
+    }
+
+    /* ---------- COMPROMISSOS ---------- */
+    .loja-pilares {
+      position: relative;
+      z-index: 1;
+      margin-top: -2.25rem;
+    }
+    .loja-pilares-lista {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background: var(--loja-paper);
+      border: 1px solid var(--loja-line);
+      border-top: 3px solid var(--loja-gold);
+      box-shadow: 0 1.25rem 2.5rem rgba(0, 18, 65, 0.1);
+    }
+    .loja-pilar {
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+      padding: 1.35rem 1.5rem;
+    }
+    .loja-pilar + .loja-pilar {
+      border-top: 1px solid var(--loja-line);
+    }
+    .loja-pilar .material-symbols-outlined {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #eef2fb;
+      color: var(--loja-royal);
+      font-size: 1.4rem;
+    }
+    .loja-pilar strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--loja-navy);
+    }
+    .loja-pilar span:not(.material-symbols-outlined) {
+      display: block;
+      font-size: 0.92rem;
+      line-height: 1.5;
+      color: var(--loja-muted);
+    }
+
+    /* ---------- VITRINE ---------- */
+    .loja-colecao {
+      padding: 4.5rem 0 4rem;
+    }
+    .loja-colecao-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem 2rem;
+      margin-bottom: 2.25rem;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--loja-line);
+    }
+    .loja-colecao-head h2 {
+      margin: 0;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      line-height: 0.95;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--loja-navy);
+    }
+    .loja-colecao-head .loja-kicker {
+      margin-bottom: 0.5rem;
+    }
+    .loja-colecao-nota {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--loja-muted);
+    }
+
+    .loja-produtos {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .loja-produto {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: var(--loja-paper);
+      border: 1px solid var(--loja-line);
+    }
+
+    /* Placa tipográfica no lugar da foto */
+    .loja-plate {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      aspect-ratio: 4 / 3;
+      padding: 1rem 1.1rem;
+      overflow: hidden;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    .loja-plate::before {
+      /* gola */
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 50%;
+      width: 5rem;
+      height: 1.35rem;
+      transform: translateX(-50%);
+      background: var(--loja-paper);
+      border-radius: 0 0 999px 999px;
+    }
+    .loja-plate-ref,
+    .loja-plate-nome {
+      position: relative;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .loja-plate-ref {
+      font-size: 0.78rem;
+      opacity: 0.85;
+    }
+    .loja-plate-nome {
+      align-self: center;
+      font-size: 0.95rem;
+    }
+    .loja-plate-num {
+      position: relative;
+      align-self: center;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-size: clamp(6rem, 14vw, 8.5rem);
+      line-height: 0.8;
+    }
+
+    .loja-plate--titular {
+      background: linear-gradient(90deg, var(--loja-royal) 0 33%, var(--loja-gold) 33% 67%, var(--loja-royal) 67%);
+    }
+    .loja-plate--titular .loja-plate-num,
+    .loja-plate--titular .loja-plate-nome {
+      color: var(--loja-navy);
+    }
+
+    .loja-plate--reserva {
+      color: var(--loja-navy);
+      background:
+        linear-gradient(90deg, var(--loja-royal) 0 0.5rem, var(--loja-gold) 0.5rem 0.85rem, transparent 0.85rem),
+        linear-gradient(270deg, var(--loja-royal) 0 0.5rem, var(--loja-gold) 0.5rem 0.85rem, transparent 0.85rem),
+        #f7f8fb;
+      box-shadow: inset 0 -1px 0 var(--loja-line);
+    }
+    .loja-plate--reserva .loja-plate-ref {
+      padding-left: 0.85rem;
+    }
+    .loja-plate--reserva::before {
+      box-shadow: inset 0 -3px 0 var(--loja-royal);
+    }
+
+    .loja-plate--caneca {
+      background:
+        radial-gradient(circle at 86% 22%, transparent 0 3.2rem, rgba(252, 204, 0, 0.55) 3.2rem 3.3rem, transparent 3.35rem),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 14px),
+        var(--loja-navy);
+    }
+    .loja-plate--caneca::before {
+      display: none;
+    }
+    .loja-plate--caneca .loja-plate-num {
+      color: var(--loja-gold);
+    }
+
+    .loja-produto-body {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 1.4rem 1.4rem 1.5rem;
+    }
+    .loja-produto-cat {
+      margin: 0 0 0.45rem;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--loja-royal);
+    }
+    .loja-produto-nome {
+      margin: 0 0 0.6rem;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--loja-navy);
+    }
+    .loja-produto-desc {
+      margin: 0 0 1.4rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--loja-muted);
+    }
+    .loja-produto-rodape {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: auto;
+      padding-top: 1.1rem;
+      border-top: 1px dashed var(--loja-line);
+    }
+    .loja-preco {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--loja-ink);
+    }
+    .loja-preco small {
+      display: block;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--loja-muted);
+    }
+    .loja-selo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.7rem;
+      background: #fff6cc;
+      border: 1px solid #e8c200;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5c4900;
+    }
+    .loja-selo .material-symbols-outlined {
+      font-size: 1rem;
+    }
+
+    /* Botão de compra — use quando o link da InfinitePay estiver pronto */
+    .loja-comprar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.1rem;
+      background: var(--loja-gold);
+      color: var(--loja-navy);
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .loja-comprar:hover,
+    .loja-comprar:focus-visible {
+      background: var(--loja-navy);
+      color: var(--loja-gold);
+    }
+
+    /* ---------- CHAMADA FINAL ---------- */
+    .loja-chamada {
+      padding-bottom: 5rem;
+    }
+    .loja-chamada-box {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: center;
+      padding: 2.25rem 1.75rem;
+      background: var(--loja-navy);
+      color: #fff;
+    }
+    .loja-chamada-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 0.5rem;
+      background: var(--loja-gold);
+    }
+    .loja-chamada h2 {
+      margin: 0 0 0.6rem;
+      font-family: "Bebas Neue", Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      line-height: 1;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    .loja-chamada p {
+      max-width: 38rem;
+      margin: 0;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+    }
+    .loja-chamada-acoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .loja-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 3rem;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid transparent;
+      font-family: "Barlow Condensed", Inter, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+    }
+    .loja-btn .material-symbols-outlined {
+      font-size: 1.15rem;
+    }
+    .loja-btn--primario {
+      background: var(--loja-gold);
+      color: var(--loja-navy);
+    }
+    .loja-btn--primario:hover,
+    .loja-btn--primario:focus-visible {
+      background: #fff;
+    }
+    .loja-btn--secundario {
+      border-color: rgba(255, 255, 255, 0.55);
+      color: #fff;
+    }
+    .loja-btn--secundario:hover,
+    .loja-btn--secundario:focus-visible {
+      border-color: var(--loja-gold);
+      color: var(--loja-gold);
+    }
+    .loja-btn:focus-visible,
+    .loja-comprar:focus-visible {
+      outline: 3px solid var(--loja-gold);
+      outline-offset: 3px;
+    }
+
+    /* ---------- RESPONSIVO ---------- */
+    @media (min-width: 720px) {
+      .loja-pilares-lista {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .loja-pilar + .loja-pilar {
+        border-top: 0;
+        border-left: 1px solid var(--loja-line);
+      }
+      .loja-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 960px) {
+      .loja-hero {
+        padding: 2.25rem 0 4.75rem;
+      }
+      .loja-hero-grid {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+      .loja-produtos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .loja-chamada-box {
+        grid-template-columns: minmax(0, 1fr) auto;
+        padding: 2.75rem 3rem;
+      }
+    }
+    @media (max-width: 520px) {
+      .loja-wrap {
+        padding: 0 1rem;
+      }
+      .loja-hero {
+        padding: 1.5rem 0 3.75rem;
+      }
+      .loja-chamada-acoes .loja-btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .loja-status-dot {
+        animation: none;
+      }
+      .loja-btn {
+        transition: none;
+      }
+    }
+
+    /* ---------- ALTO CONTRASTE ---------- */
+    .eci-accessibility-contrast .loja-page,
+    .eci-accessibility-contrast .loja-hero,
+    .eci-accessibility-contrast .loja-pilares-lista,
+    .eci-accessibility-contrast .loja-produto,
+    .eci-accessibility-contrast .loja-plate,
+    .eci-accessibility-contrast .loja-chamada-box,
+    .eci-accessibility-contrast .loja-pilar .material-symbols-outlined,
+    .eci-accessibility-contrast .loja-selo,
+    .ativo .loja-page,
+    .ativo .loja-hero,
+    .ativo .loja-produto,
+    .ativo .loja-plate {
+      background: #000 !important;
+      color: #fff !important;
+      border-color: #fff !important;
+    }
+    .eci-accessibility-contrast .loja-page *,
+    .ativo .loja-page * {
+      color: #fff !important;
+    }
+    .eci-accessibility-contrast .loja-plate::before {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="loja-page" id="conteudo">
+
+    <!-- CABEÇALHO DA LOJA -->
+    <section class="loja-hero" id="topo" aria-labelledby="loja-titulo">
+      <div class="loja-wrap">
+        <nav class="loja-breadcrumb" aria-label="Você está em">
+          <a href="index.html">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+            Início
+          </a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Loja oficial</span>
+        </nav>
+
+        <div class="loja-hero-grid">
+          <div class="loja-hero-copy">
+            <p class="loja-kicker">Coleção 2026</p>
+            <h1 class="loja-title" id="loja-titulo">Loja <strong>oficial</strong></h1>
+            <p class="loja-lead">Vista as cores do nosso clube. Ao adquirir nossos produtos oficiais, você contribui para o futuro da nossa base.</p>
+          </div>
+          <p class="loja-status" role="status">
+            <span class="loja-status-dot" aria-hidden="true"></span>
+            Loja em construção · vendas online em breve
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPROMISSOS -->
+    <section class="loja-pilares" aria-label="Por que comprar na loja oficial">
+      <div class="loja-wrap">
+        <ul class="loja-pilares-lista">
+          <li class="loja-pilar">
+            <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+            <div>
+              <strong>Produto oficial</strong>
+              <span>Peças com o escudo e as cores do Esporte Clube Itapetininga.</span>
+            </div>
+          </li>
+          <li class="loja-pilar">
+            <span class="material-symbols-outlined" aria-hidden="true">sports_soccer</span>
+            <div>
+              <strong>Apoio à base</strong>
+              <span>A renda das vendas ajuda a manter as categorias de formação.</span>
+            </div>
+          </li>
+          <li class="loja-pilar">
+            <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+            <div>
+              <strong>Compra online</strong>
+              <span>Pagamento pela internet disponível no lançamento da loja.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VITRINE DE PRODUTOS -->
+    <section class="loja-colecao" aria-labelledby="colecao-titulo">
+      <div class="loja-wrap">
+        <div class="loja-colecao-head">
+          <div>
+            <p class="loja-kicker">Vitrine</p>
+            <h2 id="colecao-titulo">Uniformes e acessórios</h2>
+          </div>
+          <p class="loja-colecao-nota">3 itens · preços divulgados no lançamento</p>
+        </div>
+
+        <!--
+          QUANDO O PRODUTO ESTIVER À VENDA: troque o <span class="loja-selo"> por
+          <a href="LINK-DA-INFINITEPAY" target="_blank" rel="noopener" class="loja-comprar">Comprar</a>
+          e o texto "A definir" pelo preço.
+        -->
+        <ul class="loja-produtos">
+
+          <!-- PRODUTO 1 -->
+          <li>
+            <article class="loja-produto" aria-labelledby="produto-titular">
+              <div class="loja-plate loja-plate--titular" aria-hidden="true">
+                <span class="loja-plate-ref">Ref. ECI-01</span>
+                <span class="loja-plate-num">26</span>
+                <span class="loja-plate-nome">Itapetininga</span>
+              </div>
+              <div class="loja-produto-body">
+                <p class="loja-produto-cat">Uniforme de jogo</p>
+                <h3 class="loja-produto-nome" id="produto-titular">Camisa Titular Oficial 2026</h3>
+                <p class="loja-produto-desc">O azul e amarelo do escudo na camisa principal do clube.</p>
+                <div class="loja-produto-rodape">
+                  <p class="loja-preco"><small>Preço</small>A definir</p>
+                  <span class="loja-selo"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Em breve</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- PRODUTO 2 -->
+          <li>
+            <article class="loja-produto" aria-labelledby="produto-reserva">
+              <div class="loja-plate loja-plate--reserva" aria-hidden="true">
+                <span class="loja-plate-ref">Ref. ECI-02</span>
+                <span class="loja-plate-num">26</span>
+                <span class="loja-plate-nome">Itapetininga</span>
+              </div>
+              <div class="loja-produto-body">
+                <p class="loja-produto-cat">Uniforme de jogo</p>
+                <h3 class="loja-produto-nome" id="produto-reserva">Camisa Reserva Branca</h3>
+                <p class="loja-produto-desc">Versão branca com detalhes nas cores do clube.</p>
+                <div class="loja-produto-rodape">
+                  <p class="loja-preco"><small>Preço</small>A definir</p>
+                  <span class="loja-selo"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Em breve</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <!-- PRODUTO 3 -->
+          <li>
+            <article class="loja-produto" aria-labelledby="produto-caneca">
+              <div class="loja-plate loja-plate--caneca" aria-hidden="true">
+                <span class="loja-plate-ref">Ref. ECI-03</span>
+                <span class="loja-plate-num">1950</span>
+                <span class="loja-plate-nome">Desde</span>
+              </div>
+              <div class="loja-produto-body">
+                <p class="loja-produto-cat">Acessório</p>
+                <h3 class="loja-produto-nome" id="produto-caneca">Caneca de Porcelana ECI</h3>
+                <p class="loja-produto-desc">Caneca com o escudo do clube, para o café antes do jogo.</p>
+                <div class="loja-produto-rodape">
+                  <p class="loja-preco"><small>Preço</small>A definir</p>
+                  <span class="loja-selo"><span class="material-symbols-outlined" aria-hidden="true">schedule</span>Em breve</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- CHAMADA FINAL -->
+    <section class="loja-chamada" aria-labelledby="chamada-titulo">
+      <div class="loja-wrap">
+        <div class="loja-chamada-box">
+          <div>
+            <h2 id="chamada-titulo">Quer garantir a sua camisa?</h2>
+            <p>Enquanto a loja não abre, fale com o clube pelo formulário de contato. Você também pode apoiar a base agora mesmo.</p>
+          </div>
+          <div class="loja-chamada-acoes">
+            <a class="loja-btn loja-btn--primario" href="index.html#contact">
+              Falar com o clube
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </a>
+            <a class="loja-btn loja-btn--secundario" href="#apoie-modal" data-modal-open>Apoie o clube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

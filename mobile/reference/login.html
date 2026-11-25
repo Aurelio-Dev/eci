@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!--
+      PROTÓTIPO ACADÊMICO - Esporte Clube Itapetininga
+      A autenticação desta página é SIMULADA no front-end (sessionStorage).
+      Não há backend e nenhuma credencial real deve ser usada aqui.
+      Esta tela existe para fins de demonstração do fluxo de acesso administrativo.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar — Esporte Clube Itapetininga</title>
+    <meta name="description" content="Acesso administrativo ao site do Esporte Clube Itapetininga.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="login.css?v=1">
+  </head>
+  <body class="login-page">
+    <a class="skip-link" href="#login-form">Ir para o formulário de acesso</a>
+
+    <main class="login-layout">
+      <!-- Painel de marca (coluna esquerda no desktop) -->
+      <aside class="login-brand">
+        <a class="login-brand__home" href="index.html">
+          <img src="img/eci.png" alt="" width="64" height="64">
+          <span class="login-brand__name">EC Itapetininga</span>
+          <span class="login-brand__since">Desde 1950</span>
+        </a>
+        <p class="login-brand__text">
+          Área restrita à comissão administrativa do clube.
+        </p>
+        <a class="login-brand__back" href="index.html">Voltar ao site do clube</a>
+      </aside>
+
+      <!-- Painel do formulário (coluna direita no desktop) -->
+      <section class="login-panel" aria-labelledby="login-title">
+        <h1 class="login-panel__title" id="login-title">Entrar</h1>
+        <p class="login-panel__subtitle">Informe suas credenciais para acessar o painel administrativo.</p>
+
+        <!-- Região de mensagens de erro/sucesso -->
+        <div class="login-alert" id="login-alert" role="alert" aria-live="assertive" hidden></div>
+
+        <form class="login-form" id="login-form" novalidate>
+          <div class="login-field">
+            <label class="login-field__label" for="usuario">Usuário</label>
+            <input
+              class="login-field__input"
+              type="text"
+              id="usuario"
+              name="usuario"
+              autocomplete="username"
+              required
+              aria-describedby="usuario-erro"
+              spellcheck="false">
+            <p class="login-field__error" id="usuario-erro" hidden></p>
+          </div>
+
+          <div class="login-field">
+            <label class="login-field__label" for="senha">Senha</label>
+            <div class="login-field__wrap">
+              <input
+                class="login-field__input"
+                type="password"
+                id="senha"
+                name="senha"
+                autocomplete="current-password"
+                required
+                aria-describedby="senha-erro">
+              <button class="login-field__toggle" type="button" id="toggle-senha" aria-pressed="false" aria-controls="senha">
+                <span class="login-field__toggle-text">Mostrar senha</span>
+              </button>
+            </div>
+            <p class="login-field__error" id="senha-erro" hidden></p>
+          </div>
+
+          <div class="login-options">
+            <label class="login-check">
+              <input type="checkbox" id="lembrar" name="lembrar">
+              <span>Manter conectado neste dispositivo</span>
+            </label>
+          </div>
+
+          <button class="login-submit" type="submit">Entrar no painel</button>
+        </form>
+
+        <p class="login-help">
+          Esqueceu a senha? Procure a comissão administrativa do clube.
+        </p>
+
+        <p class="login-demo">
+          Referência visual histórica; o acesso atual utiliza a API.
+        </p>
+      </section>
+    </main>
+
+    <!-- WIDGET DE LIBRAS -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+
+  </body>
+</html>

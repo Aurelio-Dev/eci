@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "EC Itapetininga",
+    "slug": "eci-itapetininga",
+    "scheme": "eci-itapetininga",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/eci.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#061a4b",
+        "foregroundImage": "./assets/images/eci.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-asset",
+      "expo-sharing",
+      "expo-secure-store"
+    ]
+  }
+}

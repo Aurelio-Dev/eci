@@ -1,0 +1,44 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+
+const base = process.env.ECI_TEST_API;
+const username = process.env.ECI_TEST_USER;
+const password = process.env.ECI_TEST_PASSWORD;
+if (base && (!username || !password)) throw new Error('Defina ECI_TEST_USER e ECI_TEST_PASSWORD para o banco descartável.');
+const headers = { 'Content-Type': 'application/json', 'X-ECI-Request': '1' };
+const request = (path, options = {}) => fetch(base + path, options);
+
+test('sessão e gravações protegidas com concorrência e Kardex', { skip: !base }, async () => {
+  assert.equal((await request('/api/data')).status, 401);
+  const rejected = await request('/api/login', { method: 'POST', headers, body: JSON.stringify({ usuario: username, senha: 'senha-errada', native: true }) });
+  assert.equal(rejected.status, 401);
+  const login = await request('/api/login', { method: 'POST', headers, body: JSON.stringify({ usuario: username, senha: password, native: true }) });
+  assert.equal(login.status, 200);
+  const { token } = await login.json();
+  const authorized = { ...headers, Authorization: `Bearer ${token}` };
+  const initial = await (await request('/api/data', { headers: authorized })).json();
+  assert.equal(initial.version, 0);
+  initial.data.materials.push({ id: 'bola', name: 'Bola', code: '', unit: 'un', minimum: 2 });
+  const save = await request('/api/data', { method: 'PUT', headers: authorized, body: JSON.stringify(initial) });
+  assert.equal(save.status, 200);
+  const saved = await save.json();
+  assert.equal(saved.version, 1);
+  assert.equal((await request('/api/data', { method: 'PUT', headers: authorized, body: JSON.stringify(initial) })).status, 409);
+  saved.data.movements.push({ id: 'saida', materialId: 'bola', date: '2026-11-25', kind: 'saida', quantity: 1, reference: 'Teste', note: '', createdAt: '2026-11-25T12:00:00.000Z' });
+  assert.equal((await request('/api/data', { method: 'PUT', headers: authorized, body: JSON.stringify(saved) })).status, 400);
+  const reread = await (await request('/api/data', { headers: authorized })).json();
+  assert.equal(reread.version, 1);
+  assert.equal(reread.data.materials[0].name, 'Bola');
+  assert.equal(reread.data.movements.length, 0);
+  reread.data.students.push({ id: 'aluno', name: 'Atleta teste', category: 'Sub-15', birthDate: '', guardian: 'Responsável', phone: '', cpf: '', rg: '', active: true });
+  reread.data.collaborators.push({ id: 'treinador', name: 'Treinador teste', role: 'Treinador', phone: '', email: '', active: true });
+  reread.data.movements.push({ id: 'entrada', materialId: 'bola', date: '2026-11-25', kind: 'entrada', quantity: 10, reference: 'Compra', note: '', createdAt: '2026-11-25T12:00:00.000Z' });
+  reread.data.lessons.push({ id: 'aula', date: '2026-11-25', title: 'Passe', description: 'Treino de passe', category: 'Sub-15', instructorId: 'treinador', roster: [{ id: 'aluno', name: 'Atleta teste' }], attendance: { aluno: 'presente' } });
+  assert.equal((await request('/api/data', { method: 'PUT', headers: authorized, body: JSON.stringify(reread) })).status, 200);
+  const final = await (await request('/api/data', { headers: authorized })).json();
+  assert.equal(final.data.students[0].guardian, 'Responsável');
+  assert.equal(final.data.lessons[0].attendance.aluno, 'presente');
+  assert.equal(final.data.movements[0].quantity, 10);
+  assert.equal((await request('/api/logout', { method: 'POST', headers: authorized })).status, 204);
+  assert.equal((await request('/api/data', { headers: authorized })).status, 401);
+});

@@ -1,0 +1,46 @@
+/* Expo's web reset is designed for a React Native ScrollView. These pages
+   retain the original document-scrolling layout and section CSS. */
+html, body, #root { height: auto !important; min-height: 100%; overflow-x: hidden; overflow-y: auto !important; }
+body { margin: 0; }
+.site-header-main { position: relative; }
+.site-header .site-nav button.top-nav-link { border: 0; background: transparent; cursor: pointer; }
+.site-header .menu-cascata { display: none; position: absolute; top: 100%; left: 0; margin-top: 15px; width: 250px; background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, .2); z-index: 9999; overflow: hidden; }
+.site-header .menu-cascata.ativo { display: block; }
+.site-header .menu-cascata a { display: block; padding: 12px 20px; font-size: 14px; color: #1f2937; text-decoration: none; font-weight: 600; border-bottom: 1px solid #f3f4f6; text-transform: none; letter-spacing: normal; }
+.site-header .menu-cascata a:last-child { border-bottom: 0; }
+.site-header .menu-cascata a:hover, .site-header .menu-cascata a:focus-visible { background: #f3f4f6; color: #1e3a8a; }
+.react-admin-entry {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  right: 1rem;
+  z-index: 30;
+  padding: 0.45rem 0.7rem;
+  color: #fff;
+  background: rgba(0, 18, 65, 0.8);
+  border: 1px solid rgba(252, 204, 0, 0.55);
+  border-radius: 3px;
+  font: 700 0.72rem 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.13em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.react-admin-entry:hover, .react-admin-entry:focus-visible { background: #fccc00; color: #001241; }
+@media (max-width: 767px) { .react-admin-entry { display: none; } }
+@media (max-width: 520px) {
+  .hero-title { font-size: clamp(2.9rem, 15.5vw, 4.2rem); }
+  .hero-actions { display: grid !important; grid-template-columns: minmax(0, 1fr); max-width: 100% !important; margin-top: 1.35rem !important; }
+  .hero-actions .hero-button { width: 100%; }
+}
+.eci-web-accessibility { position: fixed; top: calc(50% - 68px); right: 10px; z-index: 999999; display: flex; align-items: center; }
+.eci-web-accessibility-trigger { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; min-width: 42px; min-height: 42px; padding: 0; border: 0; border-radius: 8px; background: #2f82ec; color: #fff; cursor: pointer; box-shadow: 0 3px 10px #00124133; }
+.eci-web-accessibility-trigger .material-symbols-outlined { font-size: 24px; line-height: 1; font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.eci-web-accessibility-trigger:hover, .eci-web-accessibility-trigger:focus-visible { background: #0b2a6b; outline: 3px solid #ffcc00; outline-offset: 2px; }
+.eci-web-accessibility-menu { position: absolute; right: 52px; top: 0; display: grid; width: 205px; padding: .45rem; border-radius: 8px; background: #fff; box-shadow: 0 4px 18px #00124140; }
+.eci-web-accessibility-menu button { padding: .65rem .7rem; border: 0; background: #fff; color: #17213a; cursor: pointer; font: 600 .78rem Inter, sans-serif; text-align: left; }
+.eci-web-accessibility-menu button:hover, .eci-web-accessibility-menu button:focus-visible { background: #eef3fc; outline: 2px solid #ffcc00; outline-offset: -2px; }
+.eci-accessibility-contrast { background: #000 !important; color: #fff !important; }
+.eci-accessibility-contrast .login-layout, .eci-accessibility-contrast .admin-main, .eci-accessibility-contrast .eci-web-accessibility-menu { background: #000 !important; color: #fff !important; }
+.eci-accessibility-contrast .admin-card, .eci-accessibility-contrast .eci-stat, .eci-accessibility-contrast .eci-list-panel, .eci-accessibility-contrast .eci-detail-panel, .eci-accessibility-contrast .eci-register-list, .eci-accessibility-contrast .login-panel { background: #111 !important; color: #fff !important; }
+.eci-accessibility-contrast h1, .eci-accessibility-contrast h2, .eci-accessibility-contrast h3, .eci-accessibility-contrast p, .eci-accessibility-contrast label, .eci-accessibility-contrast .eci-web-accessibility-menu button { color: #fff !important; }
+.eci-accessibility-large-cursor, .eci-accessibility-large-cursor * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M4 2 L18 43 L25 26 L43 19 Z' fill='white' stroke='black' stroke-width='3'/%3E%3C/svg%3E") 4 2, auto !important; }
+@media (max-width: 520px) { .eci-web-accessibility { right: 10px; } .eci-web-accessibility-menu { right: 48px; width: min(205px, calc(100vw - 64px)); } }

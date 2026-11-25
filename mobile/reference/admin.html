@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!--
+      PROTÓTIPO ACADÊMICO - Esporte Clube Itapetininga
+      Painel administrativo de demonstração. O acesso é protegido por autenticação
+      SIMULADA no front-end (auth.js). Não há backend: os dados abaixo são fixos e
+      as ações não persistem. Serve para demonstrar a interface administrativa.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel administrativo — Esporte Clube Itapetininga</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      (function () {
+        try {
+          var s = sessionStorage.getItem('eci_sessao_admin') || localStorage.getItem('eci_sessao_admin');
+          if (!s) { window.location.replace('login.html'); }
+        } catch (e) { window.location.replace('login.html'); }
+      })();
+    </script>
+    <link rel="stylesheet" href="admin.css?v=1">
+  </head>
+  <body class="admin-page">
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+    <header class="admin-topbar">
+      <button class="admin-topbar__menu" type="button" id="btn-menu"
+              aria-expanded="false" aria-controls="admin-nav">
+        Menu
+      </button>
+
+      <a class="admin-topbar__brand" href="index.html">
+        <img src="img/eci.png" alt="" width="36" height="36">
+        <span>EC Itapetininga</span>
+      </a>
+
+      <div class="admin-topbar__user">
+        <span class="admin-topbar__greeting">
+          Conectado como <strong id="admin-usuario">—</strong>
+        </span>
+        <button class="admin-topbar__logout" type="button" id="btn-sair">Sair</button>
+      </div>
+    </header>
+
+    <div class="admin-shell">
+      <nav class="admin-nav" id="admin-nav" aria-label="Seções do painel">
+        <ul class="admin-nav__list">
+          <li><a class="admin-nav__link admin-nav__link--ativo" href="#conteudo" aria-current="page">Visão geral</a></li>
+          <li><a class="admin-nav__link" href="#secao-jogos">Agenda de jogos</a></li>
+          <li><a class="admin-nav__link" href="#secao-noticias">Notícias</a></li>
+          <li><a class="admin-nav__link" href="#secao-atletas">Atletas da base</a></li>
+          <li><a class="admin-nav__link" href="transparencia.html">Transparência</a></li>
+          <li><a class="admin-nav__link" href="index.html">Ver site público</a></li>
+        </ul>
+      </nav>
+
+      <main class="admin-main" id="conteudo">
+        <div class="admin-aviso" role="note">
+          Ambiente de demonstração acadêmica. Os dados exibidos são fictícios e as
+          ações não são salvas.
+        </div>
+
+        <h1 class="admin-title">Visão geral</h1>
+
+        <!-- Indicadores -->
+        <section class="admin-cards" aria-labelledby="titulo-indicadores">
+          <h2 class="sr-only" id="titulo-indicadores">Indicadores do clube</h2>
+
+          <article class="admin-card">
+            <p class="admin-card__valor">128</p>
+            <h3 class="admin-card__rotulo">Atletas na base</h3>
+            <p class="admin-card__nota">Categorias sub-13 a sub-20</p>
+          </article>
+
+          <article class="admin-card">
+            <p class="admin-card__valor">6</p>
+            <h3 class="admin-card__rotulo">Jogos no mês</h3>
+            <p class="admin-card__nota">Próximo em 21/09</p>
+          </article>
+
+          <article class="admin-card">
+            <p class="admin-card__valor">12</p>
+            <h3 class="admin-card__rotulo">Notícias publicadas</h3>
+            <p class="admin-card__nota">3 aguardando revisão</p>
+          </article>
+
+          <article class="admin-card">
+            <p class="admin-card__valor">R$ 18.400</p>
+            <h3 class="admin-card__rotulo">Apoios recebidos</h3>
+            <p class="admin-card__nota">Acumulado no trimestre</p>
+          </article>
+        </section>
+
+        <!-- Agenda de jogos -->
+        <section class="admin-secao" id="secao-jogos" aria-labelledby="titulo-jogos">
+          <div class="admin-secao__cabecalho">
+            <h2 class="admin-secao__titulo" id="titulo-jogos">Próximos jogos</h2>
+            <button class="admin-botao" type="button">Cadastrar jogo</button>
+          </div>
+
+          <div class="admin-tabela-wrap">
+            <table class="admin-tabela">
+              <caption class="sr-only">Lista dos próximos jogos, com data, adversário, local e situação</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Adversário</th>
+                  <th scope="col">Local</th>
+                  <th scope="col">Situação</th>
+                  <th scope="col">Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><time datetime="2026-09-21">21/09/2026</time></td>
+                  <td>Associação Atlética Regional</td>
+                  <td>Campo do ECI</td>
+                  <td><span class="admin-tag admin-tag--confirmado">Confirmado</span></td>
+                  <td>
+                    <div class="admin-tabela__acoes">
+                      <button class="admin-link-botao" type="button">Editar <span class="sr-only">jogo de 21 de setembro</span></button>
+                      <button class="admin-link-botao" type="button">Excluir <span class="sr-only">jogo de 21 de setembro</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><time datetime="2026-09-28">28/09/2026</time></td>
+                  <td>Projeto Esportivo Sorocaba</td>
+                  <td>Centro esportivo regional</td>
+                  <td><span class="admin-tag admin-tag--pendente">A confirmar</span></td>
+                  <td>
+                    <div class="admin-tabela__acoes">
+                      <button class="admin-link-botao" type="button">Editar <span class="sr-only">jogo de 28 de setembro</span></button>
+                      <button class="admin-link-botao" type="button">Excluir <span class="sr-only">jogo de 28 de setembro</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><time datetime="2026-10-05">05/10/2026</time></td>
+                  <td>Clube Atlético do Interior</td>
+                  <td>Campo municipal de Itapetininga</td>
+                  <td><span class="admin-tag admin-tag--confirmado">Confirmado</span></td>
+                  <td>
+                    <div class="admin-tabela__acoes">
+                      <button class="admin-link-botao" type="button">Editar <span class="sr-only">jogo de 5 de outubro</span></button>
+                      <button class="admin-link-botao" type="button">Excluir <span class="sr-only">jogo de 5 de outubro</span></button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><time datetime="2026-10-12">12/10/2026</time></td>
+                  <td>União Esportiva da Região</td>
+                  <td>Arena comunitária</td>
+                  <td><span class="admin-tag admin-tag--pendente">A confirmar</span></td>
+                  <td>
+                    <div class="admin-tabela__acoes">
+                      <button class="admin-link-botao" type="button">Editar <span class="sr-only">jogo de 12 de outubro</span></button>
+                      <button class="admin-link-botao" type="button">Excluir <span class="sr-only">jogo de 12 de outubro</span></button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Notícias -->
+        <section class="admin-secao" id="secao-noticias" aria-labelledby="titulo-noticias">
+          <div class="admin-secao__cabecalho">
+            <h2 class="admin-secao__titulo" id="titulo-noticias">Últimas notícias</h2>
+            <button class="admin-botao" type="button">Escrever notícia</button>
+          </div>
+
+          <ul class="admin-lista">
+            <li class="admin-lista__item">
+              <span class="admin-lista__titulo">Inscrições abertas para avaliação das categorias de base</span>
+              <span class="admin-lista__meta">
+                <time datetime="2026-09-12">12/09/2026</time>
+                <span class="admin-tag admin-tag--confirmado">Publicada</span>
+              </span>
+            </li>
+            <li class="admin-lista__item">
+              <span class="admin-lista__titulo">Programação de treinos da próxima semana</span>
+              <span class="admin-lista__meta">
+                <time datetime="2026-09-10">10/09/2026</time>
+                <span class="admin-tag admin-tag--pendente">Rascunho</span>
+              </span>
+            </li>
+            <li class="admin-lista__item">
+              <span class="admin-lista__titulo">Encontro com famílias dos atletas da base</span>
+              <span class="admin-lista__meta">
+                <time datetime="2026-09-08">08/09/2026</time>
+                <span class="admin-tag admin-tag--confirmado">Publicada</span>
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Atletas -->
+        <section class="admin-secao" id="secao-atletas" aria-labelledby="titulo-atletas">
+          <h2 class="admin-secao__titulo" id="titulo-atletas">Atletas da base</h2>
+          <p class="admin-secao__texto">
+            O cadastro completo de atletas será integrado em uma próxima etapa do projeto.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- WIDGET DE LIBRAS -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+    </script>
+
+    <script>
+      (function () {
+        var btn = document.getElementById('btn-menu');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var aberto = document.body.classList.toggle('admin-nav-aberta');
+          btn.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+        });
+      })();
+    </script>
+  </body>
+</html>

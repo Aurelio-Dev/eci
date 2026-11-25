@@ -1,0 +1,7 @@
+# Preserved source snapshots and extracted styles retain the original whitespace.
+mobile/reference/** -whitespace
+mobile/public/styles.css -whitespace
+mobile/public/admin.css -whitespace
+mobile/public/login.css -whitespace
+mobile/public/transparencia.css -whitespace
+mobile/public/page-css/** -whitespace

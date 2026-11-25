@@ -1,0 +1,1136 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body
+    class="bg-background text-on-surface font-body-lg selection:bg-secondary-container selection:text-on-secondary-container"
+  >
+    <header class="site-header">
+      <div class="site-header-main">
+        <a class="site-brand" href="#" aria-label="Esporte Clube Itapetininga">
+          <img
+            alt="EC Itapetininga Logo"
+            class="site-brand-logo"
+            src="img/eci.png"
+          />
+          <span class="site-brand-text">
+            <strong>EC Itapetininga</strong>
+            <small>Desde 1950</small>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Navegação principal">
+          <a class="top-nav-link" data-nav-link href="#hero">Início</a>
+          <a class="top-nav-link is-active" data-nav-link href="#history"
+            >História</a
+          >
+          <a class="top-nav-link" data-nav-link href="#categories">Base</a>
+          <a class="top-nav-link" data-nav-link href="#contact">Contato</a>
+          <a class="top-nav-link" href="transparencia.html">Transparência</a>
+        </nav>
+        <a
+          href="#apoie-modal"
+          class="desktop-support-link site-cta"
+          aria-label="Apoie o Clube"
+          data-modal-open
+        >
+          Apoie o Clube
+          <span class="material-symbols-outlined" aria-hidden="true"
+            >arrow_forward</span
+          >
+        </a>
+        <button
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+          class="mobile-menu-button site-menu-button"
+          data-mobile-menu-button
+          type="button"
+        >
+          <span class="material-symbols-outlined" data-mobile-menu-icon>
+            menu
+          </span>
+        </button>
+      </div>
+      <nav
+        aria-label="Menu mobile"
+        class="mobile-menu"
+        data-mobile-menu
+        id="mobile-menu"
+      >
+        <div class="mobile-menu-inner">
+          <div class="mobile-menu-brand" aria-hidden="true">
+            <span>ECI</span>
+            <small>Portal Oficial</small>
+          </div>
+          <a class="mobile-menu-link" data-mobile-menu-link href="#hero"
+            >Início</a
+          >
+          <a class="mobile-menu-link" data-mobile-menu-link href="#history"
+            >História</a
+          >
+          <a class="mobile-menu-link" data-mobile-menu-link href="#categories"
+            >Base</a
+          >
+          <a class="mobile-menu-link" data-mobile-menu-link href="#support"
+            >Apoio</a
+          >
+          <a class="mobile-menu-link" href="transparencia.html"
+            >Transparência</a
+          >
+          <a class="mobile-menu-link" data-mobile-menu-link href="#contact"
+            >Contato</a
+          >
+          <hr style="margin: 15px 0" />
+          <!-- WCAG fix: 4.1.2 -->
+          <button
+            class="mobile-menu-link"
+            type="button"
+            onclick="alternarCores()"
+            aria-pressed="false"
+            data-high-contrast-toggle
+          >
+            🌗 Alto Contraste
+          </button>
+          <!-- WCAG fix: 4.1.2 -->
+          <button
+            class="mobile-menu-link"
+            type="button"
+            onclick="aumentarFonte()"
+          >
+            𝐀+ Aumentar Fonte
+          </button>
+          <!-- WCAG fix: 4.1.2 -->
+          <button
+            class="mobile-menu-link"
+            type="button"
+            onclick="diminuirFonte()"
+          >
+            𝐀- Diminuir Fonte
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="hero-media">
+          <img
+            alt="Comissão técnica do Esporte Clube Itapetininga durante um treino"
+            class="hero-image"
+            src="img/DSC00051-copia.jpg"
+          />
+          <div class="hero-overlay"></div>
+          <div class="hero-field-grid"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-kicker">
+            <span>Desde 1950</span>
+            <small>Itapetininga / SP</small>
+          </div>
+          <h1 class="hero-title">
+            <span>Esporte Clube</span>
+            <strong>Itapetininga</strong>
+          </h1>
+          <p class="hero-tagline">
+            Há 75 anos formando atletas e cidadãos em Itapetininga.
+          </p>
+          <div class="hero-actions">
+            <a class="hero-button hero-button-secondary" href="#history">
+              Conheça a História
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="gradient-flow-wrapper">
+        <section class="history-editorial screen-section" id="history">
+          <div class="max-w-7xl mx-auto px-4 lg:px-8">
+            <div class="history-story">
+              <div class="history-story-hero">
+                <p class="history-story-label">Desde 1950</p>
+                <h2>Nossa História</h2>
+                <p class="history-story-subtitle">
+                  Do DERAC ao Esporte Clube Itapetininga: uma trajetória
+                  construída por futebol, cidade e formação de atletas.
+                </p>
+              </div>
+              <div class="history-story-grid">
+                <div class="history-story-copy">
+                  <article class="history-milestone">
+                    <span>01</span>
+                    <h3>Fundação</h3>
+                    <p>
+                      O clube nasceu em 26 de dezembro de 1950, ainda como DERAC
+                      — Departamento de Estradas de Rodagem Atlético Clube.
+                    </p>
+                  </article>
+                  <article class="history-milestone">
+                    <span>02</span>
+                    <h3>Tradição Competitiva</h3>
+                    <p>
+                      Por décadas, participou dos campeonatos da Federação
+                      Paulista de Futebol nas divisões Série A2, Série A3 e
+                      Segunda Divisão de Profissionais.
+                    </p>
+                  </article>
+                  <article class="history-milestone">
+                    <span>03</span>
+                    <h3>Nova Identidade</h3>
+                    <p>
+                      Em 1994, passou a se chamar Esporte Clube Itapetininga,
+                      fortalecendo o vínculo com a cidade.
+                    </p>
+                  </article>
+                  <article class="history-milestone">
+                    <span>04</span>
+                    <h3>Base e Futuro</h3>
+                    <p>
+                      Hoje, atua no Campeonato Paulista de Base nas categorias
+                      Sub-13, Sub-15 e Sub-17.
+                    </p>
+                  </article>
+                </div>
+                <div
+                  class="history-archive"
+                  aria-label="Acervo visual do clube"
+                >
+                  <div class="history-archive-stripe" aria-hidden="true"></div>
+                  <figure class="history-archive-main">
+                    <img
+                      alt="Equipe histórica do Esporte Clube Itapetininga"
+                      src="img/time.jpeg"
+                    />
+                  </figure>
+                  <figure class="history-archive-jersey">
+                    <img
+                      alt="Camisa oficial do Esporte Clube Itapetininga"
+                      src="img/jersey.png"
+                    />
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="legends-editorial-section"
+          aria-label="Grandes nomes da história do clube"
+        >
+          <div class="legends-editorial-inner">
+            <div class="legends-editorial-heading">
+              <p class="legends-editorial-kicker">
+                Histórias que marcaram gerações
+              </p>
+              <!-- WCAG fix: 1.3.1 -->
+              <h2>
+                <span>Grandes Nomes</span>
+                <strong>Nossa História</strong>
+              </h2>
+              <div class="legends-editorial-mark" aria-hidden="true">
+                <span></span>
+                <small>Desde 1950</small>
+              </div>
+            </div>
+            <div
+              class="legends-editorial-wall"
+              aria-label="Mural histórico de grandes nomes"
+            >
+              <article
+                class="legend-editorial-piece legend-editorial-piece-vadao"
+              >
+                <span class="legend-editorial-index" aria-hidden="true"
+                  >01</span
+                >
+                <img src="img/Vadao_2015.jpg" alt="Retrato de Vadão" />
+                <div class="legend-editorial-copy">
+                  <span class="legend-editorial-role">Treinador</span>
+                  <h4>Vadão</h4>
+                  <div class="legend-editorial-rule"></div>
+                  <p>Ex-Técnico Seleção Brasileira Feminina</p>
+                </div>
+              </article>
+              <article
+                class="legend-editorial-piece legend-editorial-piece-itabera"
+              >
+                <span class="legend-editorial-index" aria-hidden="true"
+                  >02</span
+                >
+                <img src="img/itabera.jpg" alt="Retrato de Carlinhos Itaberá" />
+                <div class="legend-editorial-copy">
+                  <span class="legend-editorial-role">Lateral</span>
+                  <h4>Carlinhos<br />Itaberá</h4>
+                  <div class="legend-editorial-rule"></div>
+                  <p>Ex-Fluminense</p>
+                </div>
+              </article>
+              <article
+                class="legend-editorial-piece legend-editorial-piece-marquinho"
+              >
+                <span class="legend-editorial-index" aria-hidden="true"
+                  >03</span
+                >
+                <img src="img/marquinho.jpg" alt="Retrato de Marquinhos" />
+                <div class="legend-editorial-copy">
+                  <span class="legend-editorial-role">Meia</span>
+                  <h4>Marquinhos</h4>
+                  <div class="legend-editorial-rule"></div>
+                  <p>Ex-Ferroviária de Araraquara</p>
+                </div>
+              </article>
+              <article
+                class="legend-editorial-piece legend-editorial-piece-angatuba"
+              >
+                <span class="legend-editorial-index" aria-hidden="true"
+                  >04</span
+                >
+                <img
+                  src="img/carlinhos.webp"
+                  alt="Retrato de Carlinhos Angatuba"
+                />
+                <div class="legend-editorial-copy">
+                  <span class="legend-editorial-role">Atacante</span>
+                  <h4>Carlinhos<br />Angatuba</h4>
+                  <div class="legend-editorial-rule"></div>
+                  <p>Ex-Esporte Clube Bahia</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="archive-section">
+          <div class="archive-inner">
+            <aside class="archive-intro">
+              <p class="archive-kicker">Arquivo Histórico</p>
+              <h2>Nossa História em Imagens</h2>
+              <p>
+                Cada imagem guarda um capítulo da nossa trajetória dentro e fora
+                de campo.
+              </p>
+            </aside>
+            <div class="archive-track-wrap">
+              <div
+                class="archive-track"
+                aria-label="Registros históricos do clube"
+              >
+                <article class="archive-card">
+                  <div class="archive-card-media">
+                    <img
+                      alt="Registro histórico da fundação do clube em 1950"
+                      src="img/1950.jpg"
+                    />
+                  </div>
+                  <div class="archive-card-copy">
+                    <h3>As Raízes</h3>
+                    <p>
+                      Os primeiros passos e a união da comunidade para fundar o
+                      clube.
+                    </p>
+                  </div>
+                </article>
+                <article class="archive-card">
+                  <div class="archive-card-media">
+                    <img
+                      alt="Registro do clube em sua nova fase a partir de 1994"
+                      src="img/1994.jpg"
+                    />
+                  </div>
+                  <div class="archive-card-copy">
+                    <h3>Profissionalização</h3>
+                    <p>
+                      Filiação à FPF e o início de uma nova era de competições.
+                    </p>
+                  </div>
+                </article>
+                <article class="archive-card">
+                  <div class="archive-card-media">
+                    <img
+                      alt="Atletas da base representando o legado atual do clube"
+                      src="img/hoje.jpg"
+                    />
+                  </div>
+                  <div class="archive-card-copy">
+                    <h3>Legado Contínuo</h3>
+                    <p>
+                      Foco no desenvolvimento da base e projetos sociais
+                      transformadores.
+                    </p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="academy-section" id="categories">
+          <div class="academy-inner">
+            <div class="academy-intro">
+              <p class="academy-kicker">Formação de Atletas</p>
+              <h2>Futebol de Base</h2>
+              <strong>Inscrições Gratuitas</strong>
+              <p>
+                Desenvolvemos talentos locais com metodologia, disciplina e
+                acesso democrático ao esporte de alto nível.
+              </p>
+            </div>
+            <div
+              class="academy-grid"
+              aria-label="Categorias do futebol de base"
+            >
+              <article class="academy-card">
+                <div class="academy-card-top">
+                  <small>Iniciação</small>
+                </div>
+                <h3>Sub-11</h3>
+                <p>
+                  Iniciação técnica, coordenação motora e disciplina em ambiente
+                  formativo.
+                </p>
+              </article>
+              <article class="academy-card">
+                <div class="academy-card-top">
+                  <small>Desenvolvimento</small>
+                </div>
+                <h3>Sub-13</h3>
+                <p>
+                  Desenvolvimento tático e aprimoramento das habilidades
+                  individuais.
+                </p>
+              </article>
+              <article class="academy-card academy-card-feature">
+                <div class="academy-card-top">
+                  <small>Performance</small>
+                </div>
+                <h3>Sub-15</h3>
+                <p>
+                  Alto desempenho físico e estratégico voltado aos campeonatos
+                  da FPF.
+                </p>
+              </article>
+              <article class="academy-card">
+                <div class="academy-card-top">
+                  <small>Transição</small>
+                </div>
+                <h3>Sub-17</h3>
+                <p>
+                  Etapa final de formação com foco em profissionalização e
+                  futuro competitivo.
+                </p>
+              </article>
+              <article class="academy-card">
+                <div class="academy-card-top">
+                  <small>Acesso</small>
+                </div>
+                <h3>Sub-20</h3>
+                <p>
+                  Preparação para o futebol profissional com foco em performance
+                  física e maturidade tática.
+                </p>
+              </article>
+              <article class="academy-card academy-card-feature">
+                <div class="academy-card-top">
+                  <small>Profissional</small>
+                </div>
+                <h3>Sub-23</h3>
+                <p>
+                  Equipe profissional em formação, competindo em torneios
+                  oficiais da Federação Paulista de Futebol.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section
+        class="screen-section py-24 bg-surface-container-lowest"
+        id="contact"
+      >
+        <div class="max-w-7xl mx-auto px-4 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            <div>
+              <h2 class="text-headline-lg text-primary-container mb-6">
+                Fale Conosco
+              </h2>
+              <p class="text-on-surface-variant mb-12">
+                Estamos à disposição para esclarecer dúvidas sobre treinos,
+                parcerias ou doações.
+              </p>
+              <div class="space-y-8 mb-12">
+                <div class="flex gap-4 items-center">
+                  <span
+                    class="material-symbols-outlined text-primary-container text-3xl"
+                    >location_on</span
+                  >
+                  <div>
+                    <p class="font-bold text-primary-container">Sede Social</p>
+                    <p class="text-on-surface-variant">
+                      Rua Ana Maria Ferreira Baltazar, Jd Shangri-La -
+                      Itapetininga, SP
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4 items-center">
+                  <span
+                    class="material-symbols-outlined text-primary-container text-3xl"
+                    >mail</span
+                  >
+                  <div>
+                    <p class="font-bold text-primary-container">E-mail</p>
+                    <p class="text-on-surface-variant">
+                      contato@ecitapetininga.com.br
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="h-64 rounded-lg overflow-hidden border border-outline-variant"
+              >
+                <!-- WCAG fix: 1.1.1 -->
+                <iframe
+                  title="Localização da sede do EC Itapetininga"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3662.0!2d-48.0561!3d-23.5825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Ana+Maria+Ferreira+Baltazar%2C+Jardim+Shangri-La%2C+Itapetininga+-+SP!5e0!3m2!1spt-BR!2sbr!4v1"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  aria-label="Mapa de localização do EC Itapetininga em Itapetininga, SP"
+                ></iframe>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-low p-10 rounded-lg border border-outline-variant"
+            >
+              <form class="space-y-6" id="contact-form">
+                <div>
+                  <!-- WCAG fix: 3.3.2 -->
+                  <label
+                    for="contact-name"
+                    class="text-xs font-bold text-primary-container uppercase mb-2 block tracking-wider"
+                    >Nome completo</label
+                  >
+                  <input
+                    id="contact-name"
+                    class="w-full rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container bg-white p-4"
+                    placeholder="Como podemos te chamar?"
+                    required
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <!-- WCAG fix: 3.3.2 -->
+                  <label
+                    for="contact-email"
+                    class="text-xs font-bold text-primary-container uppercase mb-2 block tracking-wider"
+                    >E-mail</label
+                  >
+                  <input
+                    id="contact-email"
+                    class="w-full rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container bg-white p-4"
+                    placeholder="seu@email.com"
+                    required
+                    type="email"
+                  />
+                </div>
+                <div>
+                  <!-- WCAG fix: 3.3.2 -->
+                  <label
+                    for="contact-subject"
+                    class="text-xs font-bold text-primary-container uppercase mb-2 block tracking-wider"
+                    >Assunto</label
+                  >
+                  <select
+                    id="contact-subject"
+                    class="w-full rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container bg-white p-4"
+                  >
+                    <option>Quero patrocinar</option>
+                    <option>Inscrição na base</option>
+                    <option>Outro</option>
+                  </select>
+                </div>
+                <div>
+                  <!-- WCAG fix: 3.3.2 -->
+                  <label
+                    for="contact-message"
+                    class="text-xs font-bold text-primary-container uppercase mb-2 block tracking-wider"
+                    >Mensagem</label
+                  >
+                  <textarea
+                    id="contact-message"
+                    class="w-full rounded-lg border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container bg-white p-4"
+                    placeholder="Escreva aqui sua mensagem..."
+                    required
+                    rows="4"
+                  ></textarea>
+                </div>
+                <p class="form-message" id="contact-form-message" role="status">
+                  Mensagem registrada. Entraremos em contato em breve.
+                </p>
+                <button
+                  class="w-full bg-primary-container text-white py-4 rounded-lg font-bold uppercase hover:bg-primary transition-all shadow-md"
+                  type="submit"
+                >
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Modal: Apoie o Clube -->
+    <div
+      id="apoie-modal"
+      aria-hidden="true"
+      aria-modal="true"
+      aria-labelledby="apoie-modal-title"
+      class="support-modal fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary-container/40 backdrop-blur-sm"
+      data-modal
+      role="dialog"
+    >
+      <div
+        class="support-modal-panel relative w-full max-w-4xl bg-surface-container-lowest rounded-lg overflow-hidden shadow-2xl flex flex-col md:flex-row"
+      >
+        <button
+          type="button"
+          aria-label="Fechar modal"
+          data-modal-close
+          class="absolute top-4 right-4 z-20 bg-black/20 hover:bg-black/40 text-white rounded-full p-2 transition-colors"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <!-- Modal Esquerda: Visual -->
+        <div class="md:w-1/2 relative min-h-[300px]">
+          <img
+            alt="Esporte Clube Itapetininga Base"
+            class="absolute inset-0 w-full h-full object-cover"
+            src="img/DSC00051-copia.jpg"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent flex items-end p-8"
+          >
+            <p class="text-white font-bold italic">
+              Cada contribuição mantém um jovem em campo.
+            </p>
+          </div>
+        </div>
+        <!-- Modal Direita: Conteúdo -->
+        <div class="md:w-1/2 p-10 flex flex-col justify-center">
+          <span
+            class="text-secondary-container font-bold uppercase tracking-widest text-xs mb-2"
+            >Impacto social</span
+          >
+          <h2
+            id="apoie-modal-title"
+            class="text-headline-md text-primary-container mb-4 leading-tight"
+          >
+            Apoie os sonhos da nossa base
+          </h2>
+          <p class="text-on-surface-variant mb-8 text-sm">
+            Sua contribuição garante que centenas de jovens continuem tendo
+            acesso a treinamentos profissionais, equipamentos de qualidade e
+            suporte social completo.
+          </p>
+          <div class="space-y-4 mb-8">
+            <div
+              class="bg-surface-container-low p-4 rounded-lg border border-outline-variant flex items-center gap-4"
+            >
+              <span class="material-symbols-outlined text-primary-container"
+                >payments</span
+              >
+              <div>
+                <p class="text-xs text-primary-container font-bold uppercase">
+                  PIX/CNPJ
+                </p>
+                <p class="font-mono text-on-surface select-all">
+                  00.000.000/0001-00
+                </p>
+              </div>
+            </div>
+            <div class="text-center text-xs text-on-surface-variant italic">
+              Ou entre em contato para planos de patrocínio empresarial.
+            </div>
+          </div>
+          <button
+            type="button"
+            data-modal-close
+            class="block text-center bg-secondary-container text-on-secondary-container w-full py-4 rounded-lg font-bold uppercase shadow-lg hover:bg-secondary-fixed transition-all"
+          >
+            Fechar
+          </button>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-primary-container text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-12 mb-12"
+        >
+          <div class="md:col-span-2">
+            <div class="footer-brand-partnership">
+              <div
+                class="footer-brand-lockup"
+                role="group"
+                aria-label="EC Itapetininga e ADFMI, parceira institucional"
+              >
+                <img
+                  src="img/eci.png"
+                  alt="Logo EC Itapetininga"
+                  class="footer-brand-logo footer-brand-logo-primary"
+                />
+                <span class="footer-brand-divider" aria-hidden="true"></span>
+                <div class="footer-brand-partner-block">
+                  <img
+                    src="img/adfmi-footer.png"
+                    alt="Logo ADFMI - Associação Desportiva dos Funcionários Municipais de Itapetininga"
+                    class="footer-brand-logo footer-brand-logo-partner"
+                  />
+                </div>
+              </div>
+            </div>
+            <p class="text-primary-fixed-dim max-w-sm mb-4">
+              Formando talentos e cidadãos desde 1950. O maior patrimônio
+              esportivo de Itapetininga.
+            </p>
+            <ul class="text-primary-fixed-dim text-sm space-y-1 mb-6">
+              <li>CNPJ: 00.000.000/0001-00</li>
+              <li>Atendimento: seg. a sex., 9h às 17h</li>
+            </ul>
+            <div class="flex gap-4">
+              <!-- WCAG fix: 4.1.2 -->
+              <span
+                class="material-symbols-outlined p-2 bg-white/10 rounded-full"
+                aria-hidden="true"
+                >public</span
+              >
+              <!-- WCAG fix: 4.1.2 -->
+              <span
+                class="material-symbols-outlined p-2 bg-white/10 rounded-full"
+                aria-hidden="true"
+                >share</span
+              >
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">
+              Navegação
+            </h4>
+            <ul class="space-y-4 text-primary-fixed-dim text-sm">
+              <li>
+                <a class="hover:text-white transition-colors" href="#history"
+                  >Nossa História</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#categories"
+                  >Categorias de Base</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#support"
+                  >Como Apoiar</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#contact"
+                  >Contato</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">
+              Informações legais
+            </h4>
+            <ul class="space-y-4 text-primary-fixed-dim text-sm">
+              <li>
+                <a class="hover:text-white transition-colors" href="#"
+                  >Política de Privacidade</a
+                >
+              </li>
+              <li>
+                <a
+                  class="hover:text-white transition-colors"
+                  href="transparencia.html"
+                  >Transparência</a
+                >
+              </li>
+              <li>
+                <a class="hover:text-white transition-colors" href="#"
+                  >Estatuto Social</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between items-center text-xs text-primary-fixed-dim/60"
+        >
+          <p>
+            © 2024 Esporte Clube Itapetininga. Todos os direitos reservados.
+          </p>
+          <p class="mt-4 md:mt-0 italic">Orgulho da nossa cidade.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- WCAG fix: 2.1.1 -->
+    <div
+      class="accessibility-panel"
+      role="region"
+      aria-label="Ferramentas de acessibilidade"
+    >
+      <button
+        class="accessibility-trigger"
+        type="button"
+        aria-label="Abrir menu de acessibilidade"
+        aria-expanded="false"
+        aria-controls="accessibility-menu"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true"
+          >accessibility_new</span
+        >
+      </button>
+      <div class="accessibility-content" id="accessibility-menu">
+        <!-- WCAG fix: 4.1.2 -->
+        <button
+          onclick="alternarCores()"
+          aria-pressed="false"
+          data-high-contrast-toggle
+        >
+          🎨 Alternar Cores
+        </button>
+        <button onclick="aumentarFonte()">🔍 A+</button>
+        <button onclick="diminuirFonte()">🔎 A-</button>
+        <button onclick="cursorGrande()">🖱️ Cursor Maior</button>
+        <button onclick="lerPagina()">🔊 Ler Página</button>
+        <button onclick="pararLeitura()">🔇 Parar Leitura</button>
+        <button onclick="lerSelecao()">🔊 Ler Texto Selecionado</button>
+      </div>
+    </div>
+    <script>
+      const mobileMenu = document.querySelector("[data-mobile-menu]");
+      const mobileMenuButton = document.querySelector(
+        "[data-mobile-menu-button]",
+      );
+      const mobileMenuIcon = document.querySelector("[data-mobile-menu-icon]");
+      const mobileMenuLinks = document.querySelectorAll(
+        "[data-mobile-menu-link]",
+      );
+      const topNavLinks = document.querySelectorAll("[data-nav-link]");
+      const siteHeader = document.querySelector(".site-header");
+      const contactForm = document.querySelector("#contact-form");
+      const contactFormMessage = document.querySelector(
+        "#contact-form-message",
+      );
+      const sections = Array.from(topNavLinks)
+        .map((link) => document.querySelector(link.getAttribute("href")))
+        .filter(Boolean);
+
+      function setActiveTopNavLink(sectionId) {
+        topNavLinks.forEach((link) => {
+          link.classList.toggle(
+            "is-active",
+            link.getAttribute("href") === `#${sectionId}`,
+          );
+        });
+      }
+
+      function updateActiveTopNavLink() {
+        let currentSection = sections[0];
+        const headerOffset = siteHeader.offsetHeight + 16;
+
+        sections.forEach((section) => {
+          if (section.getBoundingClientRect().top <= headerOffset) {
+            currentSection = section;
+          }
+        });
+
+        if (currentSection) {
+          setActiveTopNavLink(currentSection.id);
+        }
+      }
+
+      function updateHeaderOnScroll() {
+        siteHeader.classList.toggle("header-scrolled", window.scrollY > 24);
+      }
+
+      function resetLinkedSectionScroll(link) {
+        const href = link.getAttribute("href");
+
+        if (!href || !href.startsWith("#")) {
+          return;
+        }
+
+        const target = document.querySelector(href);
+
+        if (target && target.classList.contains("screen-section")) {
+          target.scrollTop = 0;
+        }
+      }
+
+      function openMobileMenu() {
+        mobileMenu.classList.add("is-open");
+        mobileMenuButton.setAttribute("aria-expanded", "true");
+        mobileMenuButton.setAttribute("aria-label", "Fechar menu");
+        mobileMenuIcon.textContent = "close";
+        document.body.classList.add("mobile-menu-open");
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("is-open");
+        mobileMenuButton.setAttribute("aria-expanded", "false");
+        mobileMenuButton.setAttribute("aria-label", "Abrir menu");
+        mobileMenuIcon.textContent = "menu";
+        document.body.classList.remove("mobile-menu-open");
+      }
+
+      function toggleMobileMenu() {
+        if (mobileMenu.classList.contains("is-open")) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      }
+
+      mobileMenuButton.addEventListener("click", toggleMobileMenu);
+
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          resetLinkedSectionScroll(link);
+          closeMobileMenu();
+        });
+      });
+
+      topNavLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          resetLinkedSectionScroll(link);
+          setActiveTopNavLink(link.getAttribute("href").slice(1));
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          if (mobileMenu.classList.contains("is-open")) {
+            closeMobileMenu();
+          }
+        }
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          closeMobileMenu();
+        }
+      });
+
+      window.addEventListener("scroll", () => {
+        updateActiveTopNavLink();
+        updateHeaderOnScroll();
+      });
+      updateActiveTopNavLink();
+      updateHeaderOnScroll();
+
+      contactForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        contactForm.reset();
+        contactFormMessage.classList.add("is-visible");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const botaoAcessibilidade = document.querySelector(
+          ".accessibility-trigger",
+        );
+        const menuAcessibilidade = document.querySelector(
+          ".accessibility-panel",
+        );
+        const conteudoAcessibilidade = document.querySelector(
+          ".accessibility-content",
+        );
+
+        if (
+          !botaoAcessibilidade ||
+          !menuAcessibilidade ||
+          !conteudoAcessibilidade
+        ) {
+          return;
+        }
+
+        function abrirMenuAcessibilidade() {
+          menuAcessibilidade.classList.add("active");
+          botaoAcessibilidade.setAttribute("aria-expanded", "true");
+
+          // WCAG fix: 2.1.1
+          const primeiroBotao = conteudoAcessibilidade.querySelector("button");
+          if (primeiroBotao) {
+            primeiroBotao.focus();
+          }
+        }
+
+        function fecharMenuAcessibilidade() {
+          menuAcessibilidade.classList.remove("active");
+          botaoAcessibilidade.setAttribute("aria-expanded", "false");
+
+          // WCAG fix: 2.1.1
+          botaoAcessibilidade.focus();
+        }
+
+        botaoAcessibilidade.addEventListener("click", (e) => {
+          e.stopPropagation();
+          if (menuAcessibilidade.classList.contains("active")) {
+            fecharMenuAcessibilidade();
+          } else {
+            abrirMenuAcessibilidade();
+          }
+        });
+
+        menuAcessibilidade.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+
+        document.addEventListener("click", () => {
+          if (menuAcessibilidade.classList.contains("active")) {
+            fecharMenuAcessibilidade();
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (
+            e.key === "Escape" &&
+            menuAcessibilidade.classList.contains("active")
+          ) {
+            fecharMenuAcessibilidade();
+          }
+        });
+      });
+
+      function alternarCores() {
+        document.body.classList.toggle("ativo");
+
+        // WCAG fix: 4.1.2
+        const botoesAltoContraste = document.querySelectorAll(
+          "[data-high-contrast-toggle]",
+        );
+        botoesAltoContraste.forEach((button) => {
+          button.setAttribute(
+            "aria-pressed",
+            document.body.classList.contains("ativo"),
+          );
+        });
+      }
+
+      let tamanhoFonte = 100;
+      const tamanhoFonteMinimo = 70;
+      const tamanhoFonteMaximo = 150;
+
+      function aplicarTamanhoFonte() {
+        document.documentElement.style.fontSize = tamanhoFonte + "%";
+      }
+
+      function aumentarFonte() {
+        if (tamanhoFonte < tamanhoFonteMaximo) {
+          tamanhoFonte += 10;
+          aplicarTamanhoFonte();
+        }
+      }
+
+      function diminuirFonte() {
+        if (tamanhoFonte > tamanhoFonteMinimo) {
+          tamanhoFonte -= 10;
+          aplicarTamanhoFonte();
+        }
+      }
+
+      function cursorGrande() {
+        document.body.classList.toggle("cursor-grande");
+      }
+
+      // Modal: Apoie o Clube
+      const apoieModal = document.querySelector("[data-modal]");
+      const modalOpenBtns = document.querySelectorAll("[data-modal-open]");
+      const modalCloseBtns = document.querySelectorAll("[data-modal-close]");
+
+      function openModal() {
+        apoieModal.classList.add("is-open");
+        apoieModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+      }
+
+      function closeModal() {
+        apoieModal.classList.remove("is-open");
+        apoieModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      }
+
+      modalOpenBtns.forEach((btn) =>
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal();
+        }),
+      );
+
+      modalCloseBtns.forEach((btn) =>
+        btn.addEventListener("click", closeModal),
+      );
+
+      apoieModal.addEventListener("click", (e) => {
+        if (e.target === apoieModal) closeModal();
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && apoieModal.classList.contains("is-open"))
+          closeModal();
+      });
+    </script>
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget("https://vlibras.gov.br/app");
+
+      function lerPagina() {
+        const texto = document.body.innerText;
+
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = "pt-BR";
+
+        speechSynthesis.cancel();
+        speechSynthesis.speak(fala);
+      }
+
+      function pararLeitura() {
+        speechSynthesis.cancel();
+      }
+
+      function lerSelecao() {
+        const texto = window.getSelection().toString();
+
+        if (!texto) {
+          alert("Selecione um texto primeiro.");
+          return;
+        }
+
+        const fala = new SpeechSynthesisUtterance(texto);
+        fala.lang = "pt-BR";
+
+        speechSynthesis.cancel();
+        speechSynthesis.speak(fala);
+      }
+    </script>
+  </body>
+</html>
